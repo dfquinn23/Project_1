@@ -5,9 +5,9 @@ __pycache__/
 
 # SHAPEFILES
 /BEA/files/shapefiles
-/BEA/files/
-/BEA/files/data/
 /BEA/__pycache__
+/BEA/files/shapefiles
+/BEA/files/maps
 /BEA/scripts/__pycache__
 /BEA/scripts/api/__pycache__
 /BEA/scripts
