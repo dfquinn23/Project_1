@@ -8,6 +8,7 @@ __pycache__/
 /BEA/__pycache__
 /BEA/scripts/__pycache__
 /BEA/scripts/api/__pycache__
+/BEA/files/maps/county_heatmap_2019_2022.html
 
 # C extensions
 *.so
