@@ -7,10 +7,9 @@ __pycache__/
 /BEA/files/shapefiles
 /BEA/__pycache__
 /BEA/files/shapefiles
-/BEA/files/maps
 /BEA/scripts/__pycache__
 /BEA/scripts/api/__pycache__
-/BEA/scripts
+
 
 # C extensions
 *.so
