@@ -3,7 +3,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
 
-
+# First:    The county_api_call.py and state_api_call.py are called first
+# Second:   The csv_df files are called second
+# Third:    The plot files are called next
 
 # path to save png
 path_png_one = Path('./BEA/files/maps/top_counties.png')
@@ -29,7 +31,7 @@ plt.gca().invert_yaxis()  # To have the highest income at the top
 plt.savefig(path_png_one)
 plt.show()
 
-# Alternatively, you can use seaborn for a more aesthetically pleasing plot
+# seaborn plot
 plt.figure(figsize=(12, 8))
 sns.barplot(x=2022, y='GeoName', data=top_25_df, palette='viridis')
 plt.xlabel('Income')
