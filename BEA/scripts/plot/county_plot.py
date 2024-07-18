@@ -7,11 +7,15 @@ import geoviews as gv
 from bokeh.io import output_notebook
 from pathlib import Path
 
+# First:    The county_api_call.py and state_api_call.py are called first
+# Second:   The csv_df files are called second
+# Third:    The plot files are called next
+
 output_notebook()
 gv.extension('bokeh')
 
 # Path to save heatmap
-path_heatmap = Path('./BEA/files/maps/county_heatmap_2019_2022.html')
+path_heatmap = Path('./BEA/files/maps/county_heatmap.html')
 
 # Path to the downloaded shapefile
 # you can download 'shapefile_paths':
@@ -22,7 +26,8 @@ shapefile_path = './BEA/files/shapefiles/tl_2023_us_county.zip'
 gdf = gpd.read_file(shapefile_path)
 
 # csv to pandas df
-pct_change = pd.read_csv('./BEA/files/data/county_change_19_22.csv')
+pct_change = pd.read_csv('./BEA/files/data/county_select_change.csv')
+
 # ensure GeoFips and GEOID are integers and not strings
 pct_change['GeoFips'] = pd.to_numeric(pct_change['GeoFips'])
 gdf['GEOID'] = pd.to_numeric(gdf['GEOID'])
@@ -40,9 +45,6 @@ heatmap = merged.hvplot.polygons(
     line_width=0.1,
     title='Percentage Increase in Income by County'
 )
-
-# Show the plot-
-# hvplot.show(heatmap)
 
 # save heatmap
 hvplot.save(heatmap, path_heatmap)

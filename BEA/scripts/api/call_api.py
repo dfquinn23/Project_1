@@ -4,6 +4,11 @@ import requests
 from dotenv import load_dotenv
 import os
 
+# First:    The county_api_call.py and state_api_call.py are called first
+# Second:   The csv_df files are called second
+# Third:    The plot files are called next
+# No need to run this file, it will be called by the other two py files in this folder
+
 load_dotenv()
 beakey = os.environ.get('API_KEY_BEA')
 

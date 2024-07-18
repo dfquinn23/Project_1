@@ -1,25 +1,28 @@
 import geopandas as gpd
 import pandas as pd
 import matplotlib.pyplot as plt
-
-import hvplot.pandas
-import geoviews as gv
-from bokeh.io import output_notebook
 from pathlib import Path
 
-# path to save png
-path_png = Path('./BEA/files/maps/state_pct_change_20192022.png')
+# First:    The county_api_call.py and state_api_call.py are called first
+# Second:   The csv_df files are called second
+# Third:    The plot files are called next
 
 # Path to the downloaded shapefile
 # you can download 'shapefile_paths':
 # https://www.census.gov/cgi-bin/geo/shapefiles/index.php
 shapefile_path = './BEA/files/shapefiles/tl_2023_us_state.zip'
 
+# path to save png
+path_png = Path('./BEA/files/maps/state_pct_change.png')
+
+# path to read csv data from
+read_path = Path('./BEA/files/data/state_clean.csv')
+
 # Read the shapefile into a GeoDataFrame
 gdf = gpd.read_file(shapefile_path)
 
 # load is csv
-state_pct_change = pd.read_csv('./BEA/files/data/state_change_19_22.csv')
+state_pct_change = pd.read_csv(read_path)
 # merge csv with gdp for mapping 
 state_merged = gdf.merge(state_pct_change, left_on='NAME', right_on='GeoName')
 gdf.head()
