@@ -3,6 +3,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# SHAPEFILES
+/BEA/files/shapefiles
+/BEA/__pycache__
+/BEA/scripts/__pycache__
+/BEA/scripts/api/__pycache__
+/BEA/files/maps/county_heatmap.html
+
 # C extensions
 *.so
 
