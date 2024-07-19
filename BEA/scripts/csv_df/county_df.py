@@ -13,7 +13,7 @@ save_path_one = Path('./BEA/files/data/county_clean.csv')
 save_path_two = Path('./BEA/files/data/county_select_change.csv')
 
 # csv to pandas df
-county_raw_df = pd.read_csv('./BEA/files/raw_data/county_raw.csv')
+county_raw_df = pd.read_csv(read_path)
 
 # change Income column to integer from string
 county_raw_df['Income'] = pd.to_numeric(county_raw_df['Income'])
