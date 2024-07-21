@@ -25,6 +25,7 @@ print(pivot_merged_df.head(3))
 
 # calculate percent change
 pct_change_df = pivot_merged_df.pct_change(axis='columns') * 100
+pct_change_df['Total Change'] = pct_change_df.sum(axis=1)
 pct_change_df = pct_change_df.reset_index()
 
 # save dataframe
@@ -48,5 +49,10 @@ percent_change[2022] = pd.to_numeric(percent_change[2022])
 percent_change = percent_change.sort_values(2022, ascending=False)
 
 # save dataframe
-percent_change.to_csv(save_path_two)
-print(percent_change[:50])
+
+new_data = pct_change_df[['GeoFips', 'GeoName', 'Total Change']]
+new_data = new_data.rename(columns={'Total Change':2022})
+new_data[2022] = pd.to_numeric(new_data[2022])
+# percent_change.to_csv(save_path_two)
+new_data.to_csv(save_path_two)
+print(new_data[:50])
