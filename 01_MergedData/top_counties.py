@@ -22,7 +22,7 @@ census_df = census_df.sort_values('Total Growth Rate', ascending=False)
 census_df = census_df[:300]
 
 
-bea_df = bea_df.sort_values('2022', ascending=False)[:300]
+bea_df = bea_df.sort_values('Income Change', ascending=False)[:300]
 zillow_df = zillow_df.sort_values('CAGR', ascending=False)[:300]
 
 
