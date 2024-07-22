@@ -1,3 +1,5 @@
+PowerPoint: https://docs.google.com/presentation/d/1C4n1221vHYB3I3TyXe0xlc94SQxWCQJcERCdjxdDIsQ/edit?usp=sharing
+
 # Identifying Optimal Locations for New Home Construction
 
 ## Project Overview
