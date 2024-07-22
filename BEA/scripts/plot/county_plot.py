@@ -43,7 +43,7 @@ heatmap = merged.hvplot.polygons(
     hover_cols=['NAME', 'percent_increase'],
     line_color='black',
     line_width=0.1,
-    title='Percentage Increase in Income by County'
+    title='Percentage Increase in Income by County 2010 - 2022'
 )
 
 # save heatmap

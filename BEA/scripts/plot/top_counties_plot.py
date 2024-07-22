@@ -18,12 +18,12 @@ read_path = Path('./BEA/files/data/county_select_change.csv')
 county_df = pd.read_csv(read_path)
 
 # counties should already be sorted, but just in case, sort then take the top 25
-top_25_df = county_df.sort_values('2022', ascending=False).head(25)
+top_25_df = county_df.sort_values('Income Change', ascending=False).head(25)
 
 print(top_25_df)
 # Plot the data using matplotlib
 plt.figure(figsize=(12, 8))
-plt.barh(top_25_df['GeoName'], top_25_df['2022'], color='skyblue')
+plt.barh(top_25_df['GeoName'], top_25_df['Income Change'], color='skyblue')
 plt.xlabel('% Change in Income')
 plt.ylabel('County')
 plt.title('Top 25 Counties by % Change in Income from 2010 - 2022')
@@ -33,7 +33,7 @@ plt.show()
 
 # seaborn plot
 plt.figure(figsize=(12, 8))
-sns.barplot(x=2022, y='GeoName', data=top_25_df, palette='viridis')
+sns.barplot(x='Income Change', y='GeoName', data=top_25_df, palette='viridis')
 plt.xlabel('Income')
 plt.ylabel('County')
 plt.title('% Change in Income from 2010 - 2022')
